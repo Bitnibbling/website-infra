@@ -1,0 +1,13 @@
+---
+- hosts: web-droplets
+  tasks: 
+    - name: Install EPEL 
+      yum: name=epel-release state=installed
+    - name: Install nginx 
+      yum: name=nginx state=installed
+      notify:
+        - start nginx
+
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started 

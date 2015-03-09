@@ -1,0 +1,8 @@
+#This will take locally constructed content and move it to the webservers. 
+#TODO: should invoke an install from artifact
+#TODO: should symlink to current version, in directory numbered with deploy time 
+---
+- hosts: web-droplets
+  - name: Remove current web content  
+  - name: Deploy static content from local /generated_web_content_public
+    src=generated_web_content/public/ dest=/usr/share/nginx/html/ mode=0644 directory_mode  

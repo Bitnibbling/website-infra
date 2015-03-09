@@ -1,0 +1,8 @@
+#configured in ssh_config
+[web-droplets]
+droplet1
+
+#configured in ssh_config 
+[ci-droplets]
+droplet2
+
